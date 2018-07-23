@@ -2,7 +2,8 @@
   "name": "lets-react",
   "version": "0.0.0",
   "homepage": "http://www.andrewpagan.me/openlife/",
-  "description": "a bootstrapped project to serve as a starting point for a new ReactJS app",
+  "description":
+    "a bootstrapped project to serve as a starting point for a new ReactJS app",
   "author": {
     "name": "OpenLattice, Inc.",
     "email": "support@openlattice.com",
@@ -98,9 +99,10 @@
     "lint:js": "eslint --config .eslintrc src",
     "test": "jest --config config/jest/jest.config.js",
     "test:watch": "jest --config config/jest/jest.config.js --watch",
-    "build": "webpack --config webpack.conf.js",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "predeploy": "npm run build",
-    "deploy": "npm run build&&gh-pages -d build"
+    "deploy": "gh-pages -d build"
   },
   "betterScripts": {
     "build:prod": {
@@ -110,7 +112,8 @@
       }
     },
     "webpack-dev-server": {
-      "command": "webpack-dev-server --config config/webpack/webpack.config.babel.js",
+      "command":
+        "webpack-dev-server --config config/webpack/webpack.config.babel.js",
       "env": {
         "BUILD": "development"
       }
