@@ -2,8 +2,7 @@
   "name": "lets-react",
   "version": "0.0.0",
   "homepage": "http://www.andrewpagan.me/openlife/",
-  "description":
-    "a bootstrapped project to serve as a starting point for a new ReactJS app",
+  "description": "a bootstrapped project to serve as a starting point for a new ReactJS app",
   "author": {
     "name": "OpenLattice, Inc.",
     "email": "support@openlattice.com",
@@ -111,8 +110,7 @@
       }
     },
     "webpack-dev-server": {
-      "command":
-        "webpack-dev-server --config config/webpack/webpack.config.babel.js",
+      "command": "webpack-dev-server --config config/webpack/webpack.config.babel.js",
       "env": {
         "BUILD": "development"
       }
