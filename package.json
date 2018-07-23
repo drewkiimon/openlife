@@ -1,8 +1,9 @@
 {
   "name": "lets-react",
   "version": "0.0.0",
-  "homepage": "https://github.com/openlattice/lets-react",
-  "description": "a bootstrapped project to serve as a starting point for a new ReactJS app",
+  "homepage": "http://www.andrewpagan.me/openlife/",
+  "description":
+    "a bootstrapped project to serve as a starting point for a new ReactJS app",
   "author": {
     "name": "OpenLattice, Inc.",
     "email": "support@openlattice.com",
@@ -27,6 +28,7 @@
     "@fortawesome/react-fontawesome": "^0.1.0",
     "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
+    "gh-pages": "^1.2.0",
     "history": "^4.7.2",
     "immutable": "4.0.0-rc.9",
     "jwt-decode": "^2.2.0",
@@ -96,7 +98,9 @@
     "lint:css": "stylelint './src/**/*.js'",
     "lint:js": "eslint --config .eslintrc src",
     "test": "jest --config config/jest/jest.config.js",
-    "test:watch": "jest --config config/jest/jest.config.js --watch"
+    "test:watch": "jest --config config/jest/jest.config.js --watch",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "betterScripts": {
     "build:prod": {
@@ -106,7 +110,8 @@
       }
     },
     "webpack-dev-server": {
-      "command": "webpack-dev-server --config config/webpack/webpack.config.babel.js",
+      "command":
+        "webpack-dev-server --config config/webpack/webpack.config.babel.js",
       "env": {
         "BUILD": "development"
       }
