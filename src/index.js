@@ -2,31 +2,28 @@
  * @flow
  */
 
-import 'babel-polyfill';
+import "babel-polyfill";
 
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 
-import LatticeAuth from 'lattice-auth';
-import { normalize } from 'polished';
-import { Provider } from 'react-redux';
-import { ConnectedRouter } from 'react-router-redux';
-import { injectGlobal } from 'styled-components';
+import LatticeAuth from "lattice-auth";
+import { normalize } from "polished";
+import { Provider } from "react-redux";
+import { ConnectedRouter } from "react-router-redux";
+import { injectGlobal } from "styled-components";
 
-import AppContainer from './containers/app/AppContainer';
-import initializeReduxStore from './core/redux/ReduxStore';
-import initializeRouterHistory from './core/router/RouterHistory';
-import * as Routes from './core/router/Routes';
+import AppContainer from "./containers/app/AppContainer";
+import initializeReduxStore from "./core/redux/ReduxStore";
+import initializeRouterHistory from "./core/router/RouterHistory";
+import * as Routes from "./core/router/Routes";
 
 // injected by Webpack.DefinePlugin
-declare var __AUTH0_CLIENT_ID__ :string;
-declare var __AUTH0_DOMAIN__ :string;
-declare var __ENV_DEV__ :boolean;
+declare var __AUTH0_CLIENT_ID__: string;
+declare var __AUTH0_DOMAIN__: string;
+declare var __ENV_DEV__: boolean;
 
-const {
-  AuthRoute,
-  AuthUtils
-} = LatticeAuth;
+const { AuthRoute, AuthUtils } = LatticeAuth;
 
 /* eslint-disable */
 injectGlobal`${normalize()}`;
@@ -66,7 +63,7 @@ LatticeAuth.configure({
   auth0ClientId: __AUTH0_CLIENT_ID__,
   auth0Domain: __AUTH0_DOMAIN__,
   authToken: AuthUtils.getAuthToken(),
-  baseUrl: (__ENV_DEV__) ? 'localhost' : 'production'
+  baseUrl: __ENV_DEV__ ? "localhost" : "production"
 });
 
 /*
@@ -82,5 +79,5 @@ ReactDOM.render(
       <AuthRoute path={Routes.ROOT} component={AppContainer} />
     </ConnectedRouter>
   </Provider>,
-  document.getElementById('app')
+  document.getElementById("app")
 );
